@@ -9,10 +9,7 @@ target 'TestProject' do
   pod 'Moya/RxSwift'
   pod 'RxSwift'
   pod 'RxCocoa'
-#  pod 'Moya-ModelMapper/RxSwift', '4.0.0'
-#  pod 'SnapKit'
   pod 'RxOptional'
-#  pod 'SVProgressHUD'
   pod 'PKHUD'
 
 end

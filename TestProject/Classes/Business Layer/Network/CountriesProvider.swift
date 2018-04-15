@@ -6,7 +6,6 @@
 //  Copyright © 2018 Semen Matsepura. All rights reserved.
 //
 
-import Foundation
 import Moya
 
 enum CountriesProvider {

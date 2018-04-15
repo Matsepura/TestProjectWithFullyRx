@@ -27,7 +27,7 @@ final class CountriesListViewController: UIViewController, StoryboardInitializab
     }
     
     private func setupRx() {
-        viewModel.repositories
+        viewModel.countriesViewModels
             .asObservable()
             .do(onNext: { [weak self] _ in self?.refreshControl.endRefreshing() })
             .bind(to: tableView.rx.items(cellIdentifier: "repoCell",

@@ -12,7 +12,7 @@ import RxSwift
 final class CountriesListViewModel {
     let service = CountriesService()
     let activityIndicator = ActivityIndicator()
-    var repositories: Variable<[CountryListViewModel]> = Variable([])
+    var countriesViewModels: Variable<[CountryListViewModel]> = Variable([])
     var error: Variable<String> = Variable("")
     private var disposeBag = DisposeBag()
     
@@ -31,11 +31,11 @@ final class CountriesListViewModel {
 
     func obtain() {
         service.obtainCountries()
-            .map { repositories in repositories.map(CountryListViewModel.init)}
+            .map { countries in countries.map(CountryListViewModel.init)}
             .observeOn(MainScheduler.instance)
             .trackActivity(activityIndicator)
             .subscribe(onNext: { (viewModels) in
-                self.repositories.value = viewModels
+                self.countriesViewModels.value = viewModels
             }, onError: { [weak self] (error) in
                 print(error.localizedDescription)
                 self?.error.value = error.localizedDescription

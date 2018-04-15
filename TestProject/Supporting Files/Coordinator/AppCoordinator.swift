@@ -18,7 +18,7 @@ class AppCoordinator: BaseCoordinator<Void> {
     }
     
     override func start() -> Observable<Void> {
-        let repositoryListCoordinator = CountriesListCoordinator(window: window)
-        return coordinate(to: repositoryListCoordinator)
+        let countriesListCoordinator = CountriesListCoordinator(window: window)
+        return coordinate(to: countriesListCoordinator)
     }
 }
